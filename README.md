@@ -1,7 +1,6 @@
 # Hungry Animal Tutorial
-This is the README.md file.
-Change this file to show your intended audience what you want them to see.
-
+Can ***you*** beat the hungry animals?
+---
 You can use **Markdown** syntax to format this file to do things like **bold** or *italicize* text.
 [Markdown basics](https://www.markdownguide.org/getting-started/)
 
