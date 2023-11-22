@@ -13,6 +13,9 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    public int score = 0;
+    Label scoreCard;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -21,8 +24,8 @@ public class MyWorld extends World
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 200);
         
-        Label score = new Label(0, 20);
-        addObject(label, 20, 20);
+        scoreCard = new Label(0, 80);
+        addObject(scoreCard, 50,  50);
         
         spawnApple();
     }
@@ -30,6 +33,16 @@ public class MyWorld extends World
     public void spawnApple() {
         Apple apple = new Apple();
         int randx = Greenfoot.getRandomNumber(600);
-        addObject(apple, randx, 0);
+        addObject(apple, randx, 0); //spawn an apple at a random generated x, at the top of the screen
+    }
+    
+    public void increaseScore() {
+        ++score;
+        scoreCard.setValue(score);
+    }
+    
+    public void gameOver() {
+        Label overLabel = new Label("GAME OVER", 100);
+        addObject(overLabel, 300, 200);
     }
 }
