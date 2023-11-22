@@ -1,10 +1,7 @@
 # Hungry Animal Tutorial
 Can ***you*** beat the hungry animals?
 ---
-You can use **Markdown** syntax to format this file to do things like **bold** or *italicize* text.
-[Markdown basics](https://www.markdownguide.org/getting-started/)
-
-This particular repository is the starting template for the Hungry Elephant tutorial.
+:shipit:It's not as easy at it seems?
 
 [Part 1: Greenfoot Basics](https://youtu.be/zxaa3X0MihI)
 
