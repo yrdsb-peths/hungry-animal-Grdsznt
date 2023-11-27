@@ -14,7 +14,7 @@ public class MyWorld extends World
      * 
      */
     
-    public int score = 0;
+    public int score = 0; int level = 1;
     Label scoreCard;
     public MyWorld()
     {    
@@ -32,6 +32,7 @@ public class MyWorld extends World
     
     public void spawnApple() {
         Apple apple = new Apple();
+        apple.setSpeed(level);
         int randx = Greenfoot.getRandomNumber(600);
         addObject(apple, randx, 0); //spawn an apple at a random generated x, at the top of the screen
     }
@@ -39,6 +40,10 @@ public class MyWorld extends World
     public void increaseScore() {
         ++score;
         scoreCard.setValue(score);
+        
+        if (score % 10 == 0) {
+            ++level;
+        }
     }
     
     public void gameOver() {
