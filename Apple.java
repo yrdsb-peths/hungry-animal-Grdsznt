@@ -17,7 +17,6 @@ public class Apple extends Actor
     public void act()
     {
         setLocation(getX(), getY()+speed);
-        
         MyWorld world = (MyWorld) getWorld();
         TitleScreen start = new TitleScreen();
         if (over || getY() >= world.getHeight()-5) {
