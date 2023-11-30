@@ -14,16 +14,17 @@ public class Apple extends Actor
      */
     int speed = 1; boolean over = false;    
     SimpleTimer timer = new SimpleTimer();
+    public int hiScore = 0;
     public void act()
     {
         setLocation(getX(), getY()+speed);
         MyWorld world = (MyWorld) getWorld();
-        TitleScreen start = new TitleScreen();
+        
         if (over || getY() >= world.getHeight()-5) {
             world.gameOver(); world.removeObject(this); 
-            Greenfoot.delay(120);
+            Greenfoot.delay(120); hiScore = Math.max(hiScore, world.score);
+            TitleScreen start = new TitleScreen(hiScore);
             Greenfoot.setWorld(start);
-            
         }
     }
     

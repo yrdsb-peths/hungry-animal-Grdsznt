@@ -15,7 +15,7 @@ public class MyWorld extends World
      */
     
     public int score = 0; int level = 1;
-    Label scoreCard;
+    Label scoreCard, speed;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -26,6 +26,9 @@ public class MyWorld extends World
         
         scoreCard = new Label(0, 80);
         addObject(scoreCard, 50,  50);
+        
+        speed = new Label("Speed: " + level, 50);
+        addObject(speed, 500, 50);
         
         spawnApple();
     }
@@ -43,6 +46,7 @@ public class MyWorld extends World
         
         if (score % 10 == 0) {
             ++level;
+            speed.setValue("Speed: " + level);
         }
     }
     
