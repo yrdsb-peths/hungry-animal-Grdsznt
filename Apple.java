@@ -12,7 +12,7 @@ public class Apple extends Actor
      * Act - do whatever the Apple wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int speed = 1; boolean over = false;    
+    int speed = 1;    
     SimpleTimer timer = new SimpleTimer();
     public int hiScore = 0;
     public void act()
@@ -20,9 +20,10 @@ public class Apple extends Actor
         setLocation(getX(), getY()+speed);
         MyWorld world = (MyWorld) getWorld();
         
-        if (over || getY() >= world.getHeight()-5) {
+        if (getY() >= world.getHeight()-5) {
+            hiScore = Math.max(hiScore, world.score);
             world.gameOver(); world.removeObject(this); 
-            Greenfoot.delay(120); hiScore = Math.max(hiScore, world.score);
+            Greenfoot.delay(120);
             TitleScreen start = new TitleScreen(hiScore);
             Greenfoot.setWorld(start);
         }
