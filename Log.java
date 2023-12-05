@@ -7,6 +7,7 @@
 public class Log  
 {
     
+    // initialize a debug boolean to toggle whether or not to print to console
     static boolean debug = false;
     /**
      * Constructor for objects of class Log
@@ -16,10 +17,10 @@ public class Log
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * If debug is set to true, it will print the elephant's x position to the console 
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param x Elphant's x position
+     *
      */
     public static void info(int x)
     {
